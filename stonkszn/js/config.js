@@ -1,6 +1,6 @@
 /* Stonk Season — shared site config (used by main.js and wallet.js) */
 const CONFIG = {
-  contractAddress: "CA SOON",
+  contractAddress: "SOON",
   buyLink: "[BUY LINK]",
   dexscreener: "https://dexscreener.com/robinhood",
 };
