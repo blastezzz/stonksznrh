@@ -1,8 +1,8 @@
 /* Stonk Season — shared site config (used by main.js and wallet.js) */
 const CONFIG = {
-  contractAddress: "SOON",
+  contractAddress: "0x3e7695dfc6d376b2def5bf17e0e97c98da8503de",
   buyLink: "[BUY LINK]",
-  dexscreener: "https://dexscreener.com/robinhood",
+  dexscreener: "https://dexscreener.com/robinhood/0x3e7695dfc6d376b2def5bf17e0e97c98da8503de",
 };
 
 /* Robinhood Chain — network the $STONKSZN token and tracked stonk tokens live on */
