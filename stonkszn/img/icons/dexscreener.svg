@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+  <!-- DexScreener-style mark: rounded tile + rising candles -->
+  <rect x="2" y="2" width="28" height="28" rx="8" fill="#1C1C28"/>
+  <path d="M8 22V16" stroke="#00D395" stroke-width="3" stroke-linecap="round"/>
+  <path d="M14 22V11" stroke="#00D395" stroke-width="3" stroke-linecap="round"/>
+  <path d="M20 22V14" stroke="#00D395" stroke-width="3" stroke-linecap="round"/>
+  <path d="M26 22V8" stroke="#00D395" stroke-width="3" stroke-linecap="round"/>
+  <path d="M7 13l7-6 5 4 6-7" stroke="#00D395" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

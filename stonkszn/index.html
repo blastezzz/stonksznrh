@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stonk Season ($STONKSZN) — All Stonks. One Season.</title>
+  <meta name="description" content="$STONKSZN is leading every stonks token into the crypto market. All stonks. One season. A community-driven meme token for entertainment.">
+  <meta name="theme-color" content="#0B3D2E">
+  <link rel="canonical" href="https://stonkszn.world/">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://stonkszn.world/">
+  <meta property="og:title" content="Stonk Season ($STONKSZN) — All Stonks. One Season.">
+  <meta property="og:description" content="$STONKSZN is leading every stonks token into the crypto market. Community-powered. Built for stonks.">
+  <meta property="og:image" content="img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stonk Season ($STONKSZN)">
+  <meta name="twitter:description" content="All stonks. One season. $STONKSZN leads every stonks token into crypto.">
+  <meta name="twitter:image" content="img/og.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Loading -->
+  <div id="loading" class="loading-screen" role="status" aria-live="polite" aria-label="Loading Stonks Season">
+    <p class="loading-title">LOADING STONKS SEASON…</p>
+    <div class="loading-candle-wrap">
+      <svg class="loading-candle" viewBox="0 0 48 140" aria-hidden="true">
+        <line x1="24" y1="10" x2="24" y2="130" stroke="#000" stroke-width="5" stroke-linecap="round"></line>
+        <rect id="candle-fill" x="8" y="110" width="32" height="8" rx="4" fill="#5CE31E" stroke="#000" stroke-width="4"></rect>
+      </svg>
+    </div>
+    <p id="loading-pct" class="loading-pct">0%</p>
+  </div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="custom-cursor-dot" id="cursor-dot" hidden=""></div>
+
+  <!-- Nav -->
+  <header class="site-header" id="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-brand" href="#hero">
+        <img src="img/logo.png" alt="" width="40" height="40" class="nav-logo">
+        <span>$STONKSZN</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#stonkverse">Stonkverse</a></li>
+        <li><a href="#tokenomics">Tokenomics</a></li>
+        <li><a href="#how-to-buy">How to Buy</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+      </ul>
+      <a class="comic-btn comic-btn--primary nav-buy" href="#tokenomics" data-confetti="">BUY $STONKSZN</a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#stonkverse">Stonkverse</a></li>
+        <li><a href="#tokenomics">Tokenomics</a></li>
+        <li><a href="#how-to-buy">How to Buy</a></li>
+        <li><a href="#community">Community</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a class="comic-btn comic-btn--primary" href="#tokenomics" data-confetti="">BUY $STONKSZN</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main" hidden="">
+    <!-- Hero -->
+    <section id="hero" class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <picture>
+          <source srcset="img/hero-bg.webp" type="image/webp">
+          <img class="hero-bg-img" src="img/hero-bg.png" alt="" width="1920" height="1080" decoding="async">
+        </picture>
+        <div class="hero-bg-scrim"></div>
+      </div>
+      <div class="hero-inner">
+        <div class="hero-title-wrap">
+          <h1 class="hero-title comic-impact reveal" data-hero="title">STONKS<br><span class="text-lime">SEASON</span></h1>
+        </div>
+        <p class="hero-sub reveal" data-hero="sub">“Every stonk has its season. This one belongs to $STONKSZN.”</p>
+        <div class="hero-contract reveal" data-hero="sub">
+          <span class="hero-contract-label">CA:</span>
+          <code id="hero-contract-address">CA SOON</code>
+          <button type="button" class="hero-contract-copy" id="copy-hero" data-confetti="" disabled>COPY</button>
+        </div>
+        <div class="hero-mascot-wrap">
+          <div class="hero-coins" aria-hidden="true" id="hero-coins"></div>
+          <div class="hero-mascot mascot-float reveal" data-hero="mascot">
+            <picture>
+              <source srcset="img/hero.webp" type="image/webp">
+              <img src="img/hero.png" alt="Stonk Season mascot — Stonks businessman with folded arms" width="640" height="800" class="hero-character-img">
+            </picture>
+          </div>
+        </div>
+        <div class="hero-ctas">
+          <a class="comic-btn comic-btn--primary reveal" data-hero="cta" href="#tokenomics" data-confetti="">BUY $STONKSZN</a>
+          <a class="comic-btn comic-btn--ghost reveal" data-hero="cta" href="#community">JOIN THE COMMUNITY</a>
+        </div>
+        <p class="hero-slogan">ALL STONKS. ONE SEASON.</p>
+      </div>
+      <div class="market-ticker" aria-hidden="true">
+        <div class="ticker-track" id="ticker-track"></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="section section--cream">
+      <div class="container">
+        <div class="comic-panel about-panel">
+          <h2>THE SEASON HAS ARRIVED</h2>
+          <p>Stocks had their moment. Memes changed the market. Now $STONKSZN brings both worlds together in one community-powered movement built for those who believe every chart deserves a chance to go up.</p>
+        </div>
+        <ul class="feature-grid">
+          <li class="comic-panel feature-card reveal-up">
+            <img class="feature-icon" src="img/icons/meme-powered.svg" alt="" width="96" height="96">
+            <h3>MEME POWERED</h3>
+            <p>Internet culture meets market theater — loud outlines, louder vibes.</p>
+          </li>
+          <li class="comic-panel feature-card reveal-up">
+            <img class="feature-icon" src="img/icons/community-driven.svg" alt="" width="96" height="96">
+            <h3>COMMUNITY DRIVEN</h3>
+            <p>Built by believers who think every chart deserves a shot at going up.</p>
+          </li>
+          <li class="comic-panel feature-card reveal-up">
+            <img class="feature-icon" src="img/icons/built-for-stonks.svg" alt="" width="96" height="96">
+            <h3>BUILT FOR STONKS</h3>
+            <p>One season. One movement. Every stonk token under one cartoon sky.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Stonkverse -->
+    <section id="stonkverse" class="section section--forest">
+      <div class="container">
+        <h2 class="section-title text-white">ALL STONKS. <span class="text-lime">ONE SEASON.</span></h2>
+        <p class="section-lead text-white-80">The meme-stock roster that built the culture. Featured for vibes — not partners, not endorsements, not financial advice.</p>
+        <ul class="stonk-grid" id="stonk-grid"></ul>
+      </div>
+    </section>
+
+    <!-- Market -->
+    <section id="market" class="section section--cream">
+      <div class="container">
+        <h2 class="section-title reveal-up">THE MARKET NEVER SLEEPS. <span class="text-forest">NEITHER DO THE MEMES.</span></h2>
+        <div class="comic-panel market-panel" id="market-panel">
+          <div class="market-hud">
+            <span class="market-badge">$STONKSZN</span>
+            <span class="market-badge market-badge--live">LIVE</span>
+            <span class="market-badge market-badge--up">▲ ONLY UP</span>
+          </div>
+          <div class="market-chart" id="market-chart" role="img" aria-label="Cartoon stonk chart with rising green candles and meme-stock logos"></div>
+          <p class="market-caption">STONKS ONLY GO UP — LEFT TO RIGHT MOMENTUM</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tokenomics -->
+    <section id="tokenomics" class="section section--forest">
+      <div class="container">
+        <h2 class="section-title text-white">STONK<span class="text-lime">NOMICS</span></h2>
+        <ul class="tok-grid">
+          <li class="comic-panel tok-card reveal-up"><p class="tok-label">Token Name</p><p class="tok-value">Stonk Season</p></li>
+          <li class="comic-panel tok-card reveal-up"><p class="tok-label">Ticker</p><p class="tok-value">$STONKSZN</p></li>
+          <li class="comic-panel tok-card reveal-up"><p class="tok-label">Network</p><p class="tok-value">Robinhood</p></li>
+          <li class="comic-panel tok-card reveal-up"><p class="tok-label">Total Supply</p><p class="tok-value">1,000,000,000</p></li>
+        </ul>
+        <div class="comic-panel tok-contract reveal-up">
+          <p class="tok-label">Contract Address</p>
+          <div class="tok-row">
+            <code id="contract-address">CA SOON</code>
+            <button type="button" class="comic-btn comic-btn--primary" id="copy-contract" data-confetti="" disabled>COPY ADDRESS</button>
+          </div>
+          <p class="tok-hint" id="contract-hint" hidden="">Contract address will appear here once published.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- How to Buy -->
+    <section id="how-to-buy" class="section section--cream">
+      <div class="container">
+        <h2 class="section-title">ENTER STONKS SEASON</h2>
+        <div class="buy-track">
+          <ol class="buy-steps">
+            <li class="comic-panel reveal-up"><span class="step-num">1</span><h3>CREATE A WALLET</h3><p>Set up a self-custody wallet that supports the network once it’s live.</p></li>
+            <li class="comic-panel reveal-up"><span class="step-num">2</span><h3>FUND YOUR WALLET</h3><p>Add the network’s native token so you can cover swaps and fees.</p></li>
+            <li class="comic-panel reveal-up"><span class="step-num">3</span><h3>CONNECT TO THE EXCHANGE</h3><p>Open your preferred DEX and connect. Link goes live with the buy button.</p></li>
+            <li class="comic-panel reveal-up"><span class="step-num">4</span><h3>SWAP FOR $STONKSZN</h3><p>Paste the official contract when published. Swap. Welcome to the season.</p></li>
+          </ol>
+        </div>
+        <div class="center-cta">
+          <a class="comic-btn comic-btn--primary comic-btn--lg" href="#tokenomics" data-confetti="">BUY NOW</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Community -->
+    <section id="community" class="section section--forest">
+      <div class="container container--narrow center">
+        <h2 class="section-title text-white">JOIN THE STONKS ARMY</h2>
+        <p class="section-lead text-white-80">The market moves fast, but Stonks Season is only getting started.</p>
+        <div class="social-row">
+          <a class="comic-btn comic-btn--ghost" href="https://x.com/stonksznrh" target="_blank" rel="noopener noreferrer" data-confetti="">
+            <img class="social-svg" src="img/icons/x.svg" alt="" width="22" height="22">
+            X / Twitter
+          </a>
+          <a class="comic-btn comic-btn--blue" href="https://t.me/STONKSZN_RH" target="_blank" rel="noopener noreferrer" data-confetti="">
+            <img class="social-svg social-svg--on-dark" src="img/icons/telegram.svg" alt="" width="22" height="22">
+            Telegram
+          </a>
+          <a class="comic-btn comic-btn--primary" href="https://dexscreener.com/robinhood" target="_blank" rel="noopener noreferrer" data-confetti="">
+            <img class="social-svg" src="img/icons/dexscreener.svg" alt="" width="22" height="22">
+            DexScreener
+          </a>
+        </div>
+        <p class="social-note">Official: <a href="https://x.com/stonksznrh" target="_blank" rel="noopener noreferrer">@stonksznrh</a> · <a href="https://t.me/STONKSZN_RH" target="_blank" rel="noopener noreferrer">t.me/STONKSZN_RH</a></p>
+      </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="enter" class="section section--cream">
+      <div class="container container--mid">
+        <div class="comic-panel final-panel reveal-up">
+          <div class="final-layout">
+            <div class="final-mascot mascot-float">
+              <picture>
+                <source srcset="img/hero.webp" type="image/webp">
+                <img src="img/hero.png" alt="Stonk Season mascot" width="560" height="700" class="hero-character-img" loading="lazy">
+              </picture>
+            </div>
+            <div class="final-copy">
+              <p class="final-line">THIS ISN’T JUST A PUMP.</p>
+              <p class="final-line text-lime">IT’S STONKS SEASON.</p>
+              <a class="comic-btn comic-btn--primary" href="#tokenomics" data-confetti="">ENTER $STONKSZN</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer" hidden="">
+    <div class="container footer-grid">
+      <div>
+        <a class="nav-brand" href="#hero">
+          <img src="img/logo.png" alt="" width="48" height="48" class="nav-logo">
+          <span>$STONKSZN</span>
+        </a>
+        <p class="footer-tag">$STONKSZN is leading every stonks token into the crypto market.</p>
+      </div>
+      <div>
+        <p class="footer-head">Navigate</p>
+        <ul class="footer-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#stonkverse">Stonkverse</a></li>
+          <li><a href="#tokenomics">Tokenomics</a></li>
+          <li><a href="#how-to-buy">How to Buy</a></li>
+          <li><a href="#community">Community</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Community</p>
+        <ul class="footer-links">
+          <li>
+            <a href="https://x.com/stonksznrh" target="_blank" rel="noopener noreferrer">
+              <img class="footer-social-svg footer-social-svg--light" src="img/icons/x.svg" alt="" width="16" height="16">
+              X / Twitter
+            </a>
+          </li>
+          <li>
+            <a href="https://t.me/STONKSZN_RH" target="_blank" rel="noopener noreferrer">
+              <img class="footer-social-svg footer-social-svg--light" src="img/icons/telegram.svg" alt="" width="16" height="16">
+              Telegram
+            </a>
+          </li>
+          <li>
+            <a href="https://dexscreener.com/robinhood" target="_blank" rel="noopener noreferrer">
+              <img class="footer-social-svg" src="img/icons/dexscreener.svg" alt="" width="16" height="16">
+              DexScreener
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="comic-panel footer-contract">
+        <p class="tok-label">Contract Address</p>
+        <div class="tok-row">
+          <code id="footer-contract">CA SOON</code>
+          <button type="button" class="comic-btn comic-btn--primary" id="copy-footer" data-confetti="" disabled>COPY</button>
+        </div>
+      </div>
+      <p class="disclaimer">$STONKSZN is a community-driven meme token created for entertainment purposes. It does not provide financial advice or promise financial returns. Always conduct your own research.</p>
+      <p class="copyright">© <span id="year">2026</span> Stonk Season ($STONKSZN). All rights reserved. For entertainment purposes only.</p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div class="modal" id="stonk-modal" hidden="">
+    <div class="modal-backdrop" data-close-modal=""></div>
+    <div class="comic-panel modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <button type="button" class="modal-close" data-close-modal="" aria-label="Close">×</button>
+      <img id="modal-logo" src="" alt="" width="112" height="112" class="modal-logo">
+      <h3 id="modal-title"></h3>
+      <p id="modal-ticker" class="modal-ticker"></p>
+      <p id="modal-label" class="modal-label"></p>
+      <p id="modal-blurb" class="modal-blurb"></p>
+    </div>
+  </div>
+
+  <script src="js/config.js" defer=""></script>
+  <script src="js/main.js" defer=""></script>
+
+</body>
+</html>

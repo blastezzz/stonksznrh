@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stonk Bag — Wallet Portfolio | $STONKSZN</title>
+  <meta name="description" content="Paste any Robinhood Chain wallet address and see which tracked stonk tokens it holds. Read-only — no wallet connection required.">
+  <meta name="theme-color" content="#0B3D2E">
+  <link rel="canonical" href="https://stonkszn.world/portfolio.html">
+  <link rel="icon" type="image/png" href="img/favicon.png">
+  <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://stonkszn.world/portfolio.html">
+  <meta property="og:title" content="Stonk Bag — Wallet Portfolio | $STONKSZN">
+  <meta property="og:description" content="Paste any Robinhood Chain wallet address and see which tracked stonk tokens it holds.">
+  <meta property="og:image" content="img/og.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Stonk Bag — Wallet Portfolio">
+  <meta name="twitter:description" content="Check any wallet's stonk token holdings on Robinhood Chain. Read-only.">
+  <meta name="twitter:image" content="img/og.jpg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <!-- Loading -->
+  <div id="loading" class="loading-screen" role="status" aria-live="polite" aria-label="Loading Stonk Bag">
+    <p class="loading-title">LOADING STONK BAG…</p>
+    <div class="loading-candle-wrap">
+      <svg class="loading-candle" viewBox="0 0 48 140" aria-hidden="true">
+        <line x1="24" y1="10" x2="24" y2="130" stroke="#000" stroke-width="5" stroke-linecap="round"></line>
+        <rect id="candle-fill" x="8" y="110" width="32" height="8" rx="4" fill="#5CE31E" stroke="#000" stroke-width="4"></rect>
+      </svg>
+    </div>
+    <p id="loading-pct" class="loading-pct">0%</p>
+  </div>
+
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="custom-cursor-dot" id="cursor-dot" hidden></div>
+
+  <!-- Nav -->
+  <header class="site-header" id="site-header">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-brand" href="index.html#hero">
+        <img src="img/logo.png" alt="" width="40" height="40" class="nav-logo">
+        <span>$STONKSZN</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#stonkverse">Stonkverse</a></li>
+        <li><a href="index.html#tokenomics">Tokenomics</a></li>
+        <li><a href="index.html#how-to-buy">How to Buy</a></li>
+        <li><a href="index.html#community">Community</a></li>
+        <li><a href="portfolio.html" aria-current="page">Portfolio</a></li>
+      </ul>
+      <a class="comic-btn comic-btn--primary nav-buy" href="index.html#tokenomics">BUY $STONKSZN</a>
+      <button type="button" class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <div class="mobile-menu" id="mobile-menu">
+      <ul>
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#stonkverse">Stonkverse</a></li>
+        <li><a href="index.html#tokenomics">Tokenomics</a></li>
+        <li><a href="index.html#how-to-buy">How to Buy</a></li>
+        <li><a href="index.html#community">Community</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a class="comic-btn comic-btn--primary" href="index.html#tokenomics">BUY $STONKSZN</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main" hidden>
+    <!-- Portfolio hero -->
+    <section class="section section--forest portfolio-hero">
+      <div class="container container--mid center">
+        <h1 class="section-title text-white">CHECK YOUR <span class="text-lime">STONK BAG</span></h1>
+        <p class="section-lead text-white-80">Paste any Robinhood Chain wallet address to see which tracked stonk tokens it's holding. Fully read-only — nothing to connect, sign, or approve.</p>
+
+        <div class="comic-panel wallet-search-panel">
+          <label class="wallet-search-label" for="wallet-input">Wallet Address</label>
+          <div class="wallet-search-row">
+            <input id="wallet-input" class="wallet-input" type="text" placeholder="0x..." autocomplete="off" spellcheck="false" inputmode="text">
+            <button type="button" class="comic-btn comic-btn--primary" id="wallet-search-btn">CHECK BALANCE</button>
+          </div>
+          <p class="wallet-search-hint" id="wallet-hint"></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Results -->
+    <section class="section section--cream">
+      <div class="container">
+        <div class="portfolio-state" id="portfolio-idle">
+          <p>Enter a wallet address above to see what's in the bag.</p>
+        </div>
+
+        <div class="portfolio-state" id="portfolio-loading" hidden>
+          <div class="portfolio-spinner" aria-hidden="true"></div>
+          <p>Scanning Robinhood Chain…</p>
+        </div>
+
+        <div class="portfolio-state" id="portfolio-error" hidden>
+          <p class="portfolio-error-text" id="portfolio-error-text">Something went wrong.</p>
+        </div>
+
+        <div id="portfolio-results-content" hidden>
+          <div class="comic-panel wallet-native-card">
+            <p class="tok-label">Native Balance</p>
+            <p class="wallet-native-value"><span id="native-balance">0</span> ETH</p>
+            <p class="wallet-address-echo" id="address-echo"></p>
+          </div>
+
+          <h2 class="portfolio-subtitle">IN THE BAG</h2>
+          <ul class="stonk-grid" id="holdings-grid"></ul>
+          <p class="no-holdings" id="no-holdings" hidden>No tracked stonk tokens found in this wallet yet.</p>
+
+          <details class="portfolio-tracked">
+            <summary>ALL TRACKED STONKS (<span id="tracked-count">0</span>)</summary>
+            <ul class="tracked-pill-list" id="tracked-pill-list"></ul>
+          </details>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="site-footer" hidden>
+    <div class="container footer-grid">
+      <div>
+        <a class="nav-brand" href="index.html#hero">
+          <img src="img/logo.png" alt="" width="48" height="48" class="nav-logo">
+          <span>$STONKSZN</span>
+        </a>
+        <p class="footer-tag">$STONKSZN is leading every stonks token into the crypto market.</p>
+      </div>
+      <div>
+        <p class="footer-head">Navigate</p>
+        <ul class="footer-links">
+          <li><a href="index.html#about">About</a></li>
+          <li><a href="index.html#stonkverse">Stonkverse</a></li>
+          <li><a href="index.html#tokenomics">Tokenomics</a></li>
+          <li><a href="index.html#how-to-buy">How to Buy</a></li>
+          <li><a href="index.html#community">Community</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="footer-head">Community</p>
+        <ul class="footer-links">
+          <li>
+            <a href="https://x.com/stonksznrh" target="_blank" rel="noopener noreferrer">
+              <img class="footer-social-svg footer-social-svg--light" src="img/icons/x.svg" alt="" width="16" height="16">
+              X / Twitter
+            </a>
+          </li>
+          <li>
+            <a href="https://t.me/STONKSZN_RH" target="_blank" rel="noopener noreferrer">
+              <img class="footer-social-svg footer-social-svg--light" src="img/icons/telegram.svg" alt="" width="16" height="16">
+              Telegram
+            </a>
+          </li>
+          <li>
+            <a href="https://dexscreener.com/robinhood" target="_blank" rel="noopener noreferrer">
+              <img class="footer-social-svg" src="img/icons/dexscreener.svg" alt="" width="16" height="16">
+              DexScreener
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container">
+      <div class="comic-panel footer-contract">
+        <p class="tok-label">Contract Address</p>
+        <div class="tok-row">
+          <code id="footer-contract">CA SOON</code>
+          <button type="button" class="comic-btn comic-btn--primary" id="copy-footer" disabled>COPY</button>
+        </div>
+      </div>
+      <p class="disclaimer">$STONKSZN is a community-driven meme token created for entertainment purposes. It does not provide financial advice or promise financial returns. Always conduct your own research. Balances shown on this page are read directly from Robinhood Chain and are provided for informational purposes only.</p>
+      <p class="copyright">© <span id="year">2026</span> Stonk Season ($STONKSZN). All rights reserved. For entertainment purposes only.</p>
+    </div>
+  </footer>
+
+  <script src="js/config.js" defer></script>
+  <script src="js/wallet.js" defer></script>
+</body>
+</html>

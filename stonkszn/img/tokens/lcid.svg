@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <circle cx="64" cy="64" r="62" fill="#0A0A0A"/>
+  <circle cx="64" cy="64" r="56" fill="#111" stroke="#5CE31E" stroke-width="4"/>
+  <text x="64" y="76" text-anchor="middle" font-family="Arial Black, Helvetica, sans-serif" font-size="30" font-weight="900" fill="#5CE31E">LCID</text>
+</svg>
